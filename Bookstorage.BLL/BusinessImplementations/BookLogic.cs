@@ -1,9 +1,9 @@
 using System;
-using bookstorage.API.DataInterfaces;
-using bookstorage.DAL.Models;
+using Bookstorage.API.DataInterfaces;
+using Bookstorage.DAL.Models;
 
 
-namespace bookstorage.BLL.BusinessImplementations
+namespace Bookstorage.BLL.BusinessImplementations
 {
     public class BookLogic : IBookLogic
     {

@@ -1,10 +1,10 @@
-using bookstorage.API.DataInterfaces;
-using bookstorage.DAL.Databases;
+using Bookstorage.API.DataInterfaces;
+using Bookstorage.DAL.Databases;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace bookstorage.DAL.DataImplementations
+namespace Bookstorage.DAL.DataImplementations
 {
     public class GenericRelationalRepository<T> : IGenericRepository<T> where T : class
     {
@@ -16,20 +16,20 @@ namespace bookstorage.DAL.DataImplementations
             }
         }
 
-        public void Delete(T entity)
+        public void Delete(T registry)
         {
             using (var dataBase = new PGSQLContext())
             {
-                dataBase.Set<T>().Remove(entity);
+                dataBase.Set<T>().Remove(registry);
                 dataBase.SaveChanges();
             }
         }
 
-        public T Get(Guid idEntity)
+        public T Get(Guid id)
         {
             using (var dataBase = new PGSQLContext())
             {
-                return dataBase.Set<T>().Find(idEntity);
+                return dataBase.Set<T>().Find(id);
             }
         }
 
@@ -41,23 +41,23 @@ namespace bookstorage.DAL.DataImplementations
             }
         }
 
-        public T Insert(T entity)
+        public T Insert(T registry)
         {
             using (var dataBase = new PGSQLContext())
             {
-                dataBase.Set<T>().Add(entity);
+                dataBase.Set<T>().Add(registry);
                 dataBase.SaveChanges();
-                return entity;
+                return registry;
             }
         }
 
-        public T Update(Guid id, T entity)
+        public T Update(Guid id, T registry)
         {
             using (var dataBase = new PGSQLContext())
             {
-                dataBase.Set<T>().Update(entity);
+                dataBase.Set<T>().Update(registry);
                 dataBase.SaveChanges();
-                return entity;
+                return registry;
             }
         }
     }

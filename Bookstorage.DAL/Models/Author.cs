@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace bookstorage.DAL.Models
+namespace Bookstorage.DAL.Models
 {
     public class Author
     {

@@ -1,6 +1,6 @@
 using System;
 
-namespace bookstorage.DAL.Models
+namespace Bookstorage.DAL.Models
 {
   public class Book
   {
@@ -12,12 +12,10 @@ namespace bookstorage.DAL.Models
     public virtual Author author { get; set; }
     public virtual BookGenre genre { get; set; }
 
-    public Book(string name, Author author, float price, BookGenre genre)
+    public Book(string name, float price)
     {
       this.name = name;
-      this.author = author;
       this.price = price;
-      this.genre = genre;
     }
   }
 }

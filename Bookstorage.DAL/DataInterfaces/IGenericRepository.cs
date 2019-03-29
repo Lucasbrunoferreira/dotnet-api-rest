@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace bookstorage.API.DataInterfaces
+namespace Bookstorage.API.DataInterfaces
 {
     public interface IGenericRepository<T> where T : class
     {

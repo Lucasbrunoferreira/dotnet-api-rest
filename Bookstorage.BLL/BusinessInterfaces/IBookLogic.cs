@@ -1,7 +1,7 @@
 using System;
-using bookstorage.DAL.Models;
+using Bookstorage.DAL.Models;
 
-namespace bookstorage.BLL.BusinessImplementations
+namespace Bookstorage.BLL.BusinessImplementations
 {
     public interface IBookLogic
     {

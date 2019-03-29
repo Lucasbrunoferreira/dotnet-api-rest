@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace bookstorage.DAL
+namespace Bookstorage.DAL
 {
     public class Class1
     {

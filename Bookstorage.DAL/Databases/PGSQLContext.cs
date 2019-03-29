@@ -1,8 +1,8 @@
-using bookstorage.DAL.Models;
+using Bookstorage.DAL.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
 
-namespace bookstorage.DAL.Databases
+namespace Bookstorage.DAL.Databases
 {
   public class PGSQLContext : DbContext
   {
@@ -12,7 +12,7 @@ namespace bookstorage.DAL.Databases
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-      optionsBuilder.UseNpgsql(Environment.GetEnvironmentVariable("PGSQL_CONNECTION_STRING") ?? "host=172.17.0.2;port=5432;database=Teste;user id=postgres;password=mysecretpassword");
+      optionsBuilder.UseNpgsql(Environment.GetEnvironmentVariable("PGSQL_CONNECTION_STRING") ?? "host=127.0.0.1;port=5432;database=teste;user id=postgres;password=mysecretpassword");
     }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)

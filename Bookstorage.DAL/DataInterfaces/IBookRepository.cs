@@ -1,8 +1,8 @@
 using System;
 using System.Collections.Generic;
-using bookstorage.DAL.Models;
+using Bookstorage.DAL.Models;
 
-namespace bookstorage.API.DataInterfaces
+namespace Bookstorage.API.DataInterfaces
 {
     public interface IBookRepository: IGenericRepository<Book>
     {
