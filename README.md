@@ -15,6 +15,6 @@ This is a example, to implements a web api in layers with C# (dotnet) and Postgr
 After preparing your environment and your virtualenv, follow the steps:
 
 * `dotnet restore`
-* `cd Bookstorage.API`
+* `cd BookStore.API`
 * `dotnet run`
 * `Application is listening on http://localhost:5001`

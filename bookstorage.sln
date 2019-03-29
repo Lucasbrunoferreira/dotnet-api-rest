@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26124.0
 MinimumVisualStudioVersion = 15.0.26124.0
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bookstorage.API", "Bookstorage.API\bookstorage.API.csproj", "{A17D14E2-7AE9-4D36-9AFF-80446D9922FA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookStore.API", "BookStore.API\BookStore.API.csproj", "{A17D14E2-7AE9-4D36-9AFF-80446D9922FA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bookstorage.DAL", "Bookstorage.DAL\bookstorage.DAL.csproj", "{B7099F79-50B4-45A5-8AB8-3069E60C207C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookStore.DAL", "BookStore.DAL\BookStore.DAL.csproj", "{B7099F79-50B4-45A5-8AB8-3069E60C207C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bookstorage.BLL", "Bookstorage.BLL\bookstorage.BLL.csproj", "{678500AF-3208-4705-91E2-2B9E0264043A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookStore.BLL", "BookStore.BLL\BookStore.BLL.csproj", "{678500AF-3208-4705-91E2-2B9E0264043A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
