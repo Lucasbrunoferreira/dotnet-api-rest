@@ -2,14 +2,22 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using bookstorage.BLL.BusinessImplementations;
 using Microsoft.AspNetCore.Mvc;
 
 namespace bookstorage.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ValuesController : ControllerBase
+    public class BookController : ControllerBase
     {
+        private IBookLogic _bookLogic;
+
+        public BookController(IBookLogic bookLogic)
+        {
+            _bookLogic = bookLogic;
+        }
+
         // GET api/values
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
@@ -19,9 +27,11 @@ namespace bookstorage.API.Controllers
 
         // GET api/values/5
         [HttpGet("{id}")]
-        public ActionResult<string> Get(int id)
+        public ActionResult<string> Get(Guid id)
         {
-            return "value";
+            var gostoso = _bookLogic.SAHdsdhf(id);
+            Console.Write(gostoso);
+            return "gostoso";
         }
 
         // POST api/values
