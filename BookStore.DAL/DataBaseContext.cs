@@ -2,13 +2,13 @@ using BookStore.DAL.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
 
-namespace BookStore.DAL.Databases
+namespace BookStore.DAL
 {
-  public class PGSQLContext : DbContext
+  public class DataBaseContext : DbContext
   {
     public DbSet<Author> Author {get; set;}
     public DbSet<Book> Book {get; set;}
-    public DbSet<BookGenre> BookGenre {get; set;}
+    public DbSet<Genre> Genre {get; set;}
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
@@ -17,11 +17,11 @@ namespace BookStore.DAL.Databases
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-      modelBuilder.HasDefaultSchema("teste");
+      modelBuilder.HasDefaultSchema("bookStore");
       modelBuilder.Entity<Author>().HasKey(a => a.authorId);
-      modelBuilder.Entity<BookGenre>().HasKey(bg => bg.genreId);
+      modelBuilder.Entity<Genre>().HasKey(bg => bg.genreId);
       modelBuilder.Entity<Book>().HasKey(bg => bg.bookId);
-      modelBuilder.Entity<BookGenre>().HasMany(a => a.books)
+      modelBuilder.Entity<Genre>().HasMany(a => a.books)
         .WithOne(b => b.genre)
         .HasForeignKey(c => c.genreId);
       modelBuilder.Entity<Author>().HasMany(a => a.books)

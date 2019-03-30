@@ -10,7 +10,7 @@ namespace BookStore.DAL.Models
     public string name { get; set; }
     public float price { get; set; }
     public virtual Author author { get; set; }
-    public virtual BookGenre genre { get; set; }
+    public virtual Genre genre { get; set; }
 
     public Book(string name, float price)
     {

@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using BookStore.API.DataInterfaces;
-using BookStore.BLL.BusinessImplementations;
-using BookStore.DAL.DataImplementations;
+using BookStore.DAL.Repository.Interface;
+using BookStore.DAL.Repository.Implementation;
+using BookStore.BLL.Implementation;
+using BookStore.BLL.Interface;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;

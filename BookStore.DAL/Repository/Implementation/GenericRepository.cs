@@ -1,16 +1,15 @@
-using BookStore.API.DataInterfaces;
-using BookStore.DAL.Databases;
+using BookStore.DAL.Repository.Interface;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace BookStore.DAL.DataImplementations
+namespace BookStore.DAL.Repository.Implementation
 {
     public class GenericRelationalRepository<T> : IGenericRepository<T> where T : class
     {
         public T GetById(Guid id)
         {
-            using (var dataBase = new PGSQLContext())
+            using (var dataBase = new DataBaseContext())
             {
                 return dataBase.Set<T>().Find(id);
             }
@@ -18,7 +17,7 @@ namespace BookStore.DAL.DataImplementations
 
         public void Delete(T registry)
         {
-            using (var dataBase = new PGSQLContext())
+            using (var dataBase = new DataBaseContext())
             {
                 dataBase.Set<T>().Remove(registry);
                 dataBase.SaveChanges();
@@ -27,7 +26,7 @@ namespace BookStore.DAL.DataImplementations
 
         public T Get(Guid id)
         {
-            using (var dataBase = new PGSQLContext())
+            using (var dataBase = new DataBaseContext())
             {
                 return dataBase.Set<T>().Find(id);
             }
@@ -35,7 +34,7 @@ namespace BookStore.DAL.DataImplementations
 
         public ICollection<T> GetAll()
         {
-            using (var dataBase = new PGSQLContext())
+            using (var dataBase = new DataBaseContext())
             {
                 return dataBase.Set<T>().ToList();
             }
@@ -43,7 +42,7 @@ namespace BookStore.DAL.DataImplementations
 
         public T Insert(T registry)
         {
-            using (var dataBase = new PGSQLContext())
+            using (var dataBase = new DataBaseContext())
             {
                 dataBase.Set<T>().Add(registry);
                 dataBase.SaveChanges();
@@ -53,7 +52,7 @@ namespace BookStore.DAL.DataImplementations
 
         public T Update(Guid id, T registry)
         {
-            using (var dataBase = new PGSQLContext())
+            using (var dataBase = new DataBaseContext())
             {
                 dataBase.Set<T>().Update(registry);
                 dataBase.SaveChanges();

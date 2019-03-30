@@ -3,17 +3,11 @@ using System.Collections.Generic;
 
 namespace BookStore.DAL.Models
 {
-    public class BookGenre
+    public class Genre
     {
       public Guid genreId { get; set; }
       public string description { get; set; }
 	    public string initials { get; set; }
       public virtual List<Book> books { get; set; }
-
-      public BookGenre(string description, string initials)
-      {
-        this.description = description;
-        this.initials = initials;
-      }
     }
 }

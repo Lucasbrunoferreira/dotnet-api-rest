@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using BookStore.BLL.BusinessImplementations;
+using BookStore.BLL.Implementation;
 using Microsoft.AspNetCore.Mvc;
+using BookStore.BLL.Interface;
 
 namespace BookStore.API.Controllers
 {

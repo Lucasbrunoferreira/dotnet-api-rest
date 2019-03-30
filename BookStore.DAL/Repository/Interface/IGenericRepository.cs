@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace BookStore.API.DataInterfaces
+namespace BookStore.DAL.Repository.Interface
 {
     public interface IGenericRepository<T> where T : class
     {

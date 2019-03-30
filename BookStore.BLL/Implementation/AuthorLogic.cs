@@ -1,9 +1,9 @@
 using System;
-using BookStore.API.DataInterfaces;
+using BookStore.DAL.Repository.Interface;
 using BookStore.DAL.Models;
+using BookStore.BLL.Interface;
 
-
-namespace BookStore.BLL.BusinessImplementations
+namespace BookStore.BLL.Implementation
 {
     public class AuthorLogic : IAuthorLogic
     {
