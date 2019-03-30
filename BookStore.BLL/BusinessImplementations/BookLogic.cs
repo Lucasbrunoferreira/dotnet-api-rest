@@ -13,7 +13,7 @@ namespace BookStore.BLL.BusinessImplementations
            _bookRepository = bookRepository;
         }
 
-        public Book SAHdsdhf(Guid id)
+        public Book GetBookById(Guid id)
         {
             return _bookRepository.Get(id);
         }

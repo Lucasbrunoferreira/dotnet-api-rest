@@ -3,8 +3,8 @@ using BookStore.DAL.Models;
 
 namespace BookStore.BLL.BusinessImplementations
 {
-    public interface IBookLogic
+    public interface IAuthorLogic
     {
-        Book GetBookById(Guid id);
+      Author CreateAuthor(Author author);
     }
 }

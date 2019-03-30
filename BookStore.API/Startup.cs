@@ -31,6 +31,8 @@ namespace BookStore.API
         {
             services.AddScoped<IBookRepository, BookRepository>();
             services.AddScoped<IBookLogic, BookLogic>();
+            services.AddScoped<IAuthorRepository, AuthorRepository>();
+            services.AddScoped<IAuthorLogic, AuthorLogic>();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 

@@ -27,14 +27,14 @@ namespace BookStore.API.Controllers
         [HttpGet("{id}")]
         public ActionResult<string> Get(Guid id)
         {
-            var gostoso = _bookLogic.SAHdsdhf(id);
-            Console.Write(gostoso);
-            return "gostoso";
+            var book = _bookLogic.GetBookById(id);
+            return "ok";
         }
 
         [HttpPost]
-        public void Post([FromBody] string value)
+        public string Post([FromBody] string value)
         {
+            return value;
         }
 
         [HttpPut("{id}")]

@@ -7,7 +7,7 @@
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/bookstorage.API/bookstorage.API.csproj"
+                "${workspaceFolder}/BookStore.API/BookStore.API.csproj"
             ],
             "problemMatcher": "$tsc"
         },
@@ -17,7 +17,7 @@
             "type": "process",
             "args": [
                 "publish",
-                "${workspaceFolder}/bookstorage.API/bookstorage.API.csproj"
+                "${workspaceFolder}/BookStore.API/BookStore.API.csproj"
             ],
             "problemMatcher": "$tsc"
         },
@@ -28,7 +28,7 @@
             "args": [
                 "watch",
                 "run",
-                "${workspaceFolder}/bookstorage.API/bookstorage.API.csproj"
+                "${workspaceFolder}/BookStore.API/BookStore.API.csproj"
             ],
             "problemMatcher": "$tsc"
         }

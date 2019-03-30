@@ -6,13 +6,14 @@
       "name": ".NET Core Launch (web)",
       "type": "coreclr",
       "request": "launch",
-      "preLaunchTask": "build",
-      "program": "${workspaceFolder}/BookStore.API/bin/Debug/netcoreapp2.2/bookstorage.API.dll",
+      "program": "${workspaceFolder}/BookStore.API/bin/Debug/netcoreapp2.2/BookStore.API.dll",
       "args": [],
       "cwd": "${workspaceFolder}/BookStore.API",
       "stopAtEntry": false,
+      "requireExactSource": false,
+      "preLaunchTask": "build",
       "launchBrowser": {
-        "enabled": true
+        "enabled": false
       },
       "env": {
         "ASPNETCORE_ENVIRONMENT": "Development"
