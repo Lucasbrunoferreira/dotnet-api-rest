@@ -12,15 +12,15 @@ namespace BookStore.DAL
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-      optionsBuilder.UseNpgsql(Environment.GetEnvironmentVariable("PGSQL_CONNECTION_STRING") ?? "host=127.0.0.1;port=5432;database=teste;user id=postgres;password=mysecretpassword");
+      optionsBuilder.UseNpgsql(Environment.GetEnvironmentVariable("PGSQL_CONNECTION_STRING") ?? "host=127.0.0.1;port=5432;database=library;user id=postgres;password=mysecretpassword");
     }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
       modelBuilder.HasDefaultSchema("bookStore");
       modelBuilder.Entity<Author>().HasKey(a => a.authorId);
-      modelBuilder.Entity<Genre>().HasKey(bg => bg.genreId);
-      modelBuilder.Entity<Book>().HasKey(bg => bg.bookId);
+      modelBuilder.Entity<Genre>().HasKey(g => g.genreId);
+      modelBuilder.Entity<Book>().HasKey(b => b.bookId);
       modelBuilder.Entity<Genre>().HasMany(a => a.books)
         .WithOne(b => b.genre)
         .HasForeignKey(c => c.genreId);
