@@ -22,15 +22,17 @@ namespace BookStore.API.Controllers
         }
 
         [HttpGet]
-        public ActionResult<IEnumerable<string>> Get()
+        public ActionResult<string> Get()
         {
-            return new string[] { "author1", "author2" };
+            var allAuthor = _authorLogic.GettAllAuthor();
+            return StatusCode(StatusCodes.Status200OK, allAuthor);
         }
 
         [HttpGet("{id}")]
         public ActionResult<string> Get(Guid id)
         {
-            return "author";
+            var author = _authorLogic.GetAuthorById(id);
+            return StatusCode(StatusCodes.Status200OK, author);
         }
 
         [HttpPost]
@@ -41,20 +43,22 @@ namespace BookStore.API.Controllers
             {
                 throw new Exception("Error in create new Author");
             }
-
-            return StatusCode(StatusCodes.Status201Created,
-                new { author = insertedAuthor.authorId });
+            return StatusCode(StatusCodes.Status201Created, insertedAuthor);
         }
 
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public ActionResult<string> Put(Guid id, [FromBody] Author author)
         {
+            _authorLogic.UpdateAuthor(id, author);
+            return StatusCode(StatusCodes.Status200OK);
         }
 
 
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public ActionResult<string> Delete(Guid id)
         {
+            _authorLogic.DeleteAuthor(id);
+            return StatusCode(StatusCodes.Status200OK);
         }
     }
 }

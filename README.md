@@ -11,6 +11,11 @@ This is a example, to implements a web api in layers with C# (dotnet) and Postgr
 
 * **.DAL** - Layer responsible for data modeling and access to the database.
 
+### Run Migrations
+* `cd BookStore.DAL`
+* `dotnet ef database update`
+
+
 ### Run
 After preparing your environment and your virtualenv, follow the steps:
 
