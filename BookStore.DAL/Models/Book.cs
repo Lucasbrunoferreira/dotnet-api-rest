@@ -1,21 +1,23 @@
 using System;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace BookStore.DAL.Models
 {
+   [Table("books")]
   public class Book
   {
-    public Guid authorId { get; set; }
-    public Guid genreId { get; set; }
     public Guid bookId { get; set; }
+    [Required]
+    [MaxLength(30)]
     public string name { get; set; }
+    [Required]
     public float price { get; set; }
-    public virtual Author author { get; set; }
-    public virtual Genre genre { get; set; }
-
-    public Book(string name, float price)
-    {
-      this.name = name;
-      this.price = price;
-    }
+    [Required]
+    [MaxLength(20)]
+    public string genre { get; set; }
+    [Required]
+    [MaxLength(40)]
+    public string author { get; set; }
   }
 }
