@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 using BookStore.BLL.Implementation;
 using Microsoft.AspNetCore.Mvc;
 using BookStore.BLL.Interface;
+using BookStore.DAL.Models;
+using Microsoft.AspNetCore.Http;
 
 namespace BookStore.API.Controllers
 {
@@ -20,33 +22,43 @@ namespace BookStore.API.Controllers
         }
 
         [HttpGet]
-        public ActionResult<IEnumerable<string>> Get()
+        public ActionResult<string> Get()
         {
-            return new string[] { "value1", "value2" };
+            var allBook = _bookLogic.GettAllBook();
+            return StatusCode(StatusCodes.Status200OK, allBook);
         }
 
-        [HttpGet("{id}")]
+       [HttpGet("{id}")]
         public ActionResult<string> Get(Guid id)
         {
             var book = _bookLogic.GetBookById(id);
-            return "ok";
+            return StatusCode(StatusCodes.Status200OK, book);
         }
 
         [HttpPost]
-        public string Post([FromBody] string value)
+        public ActionResult Post([FromBody] Book book)
         {
-            return value;
+           var insertedBook = _bookLogic.CreateBook(book);
+            if (insertedBook == null)
+            {
+                throw new Exception("Error in create new Book");
+            }
+            return StatusCode(StatusCodes.Status201Created, insertedBook);
         }
 
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public ActionResult<string> Put(Guid id, [FromBody] Book book)
         {
+            _bookLogic.UpdateBook(id, book);
+            return StatusCode(StatusCodes.Status200OK);
         }
 
 
-        [HttpDelete("{id}")]
-        public void Delete(int id)
+         [HttpDelete("{id}")]
+        public ActionResult<string> Delete(Guid id)
         {
+            _bookLogic.DeleteBook(id);
+            return StatusCode(StatusCodes.Status200OK);
         }
     }
 }

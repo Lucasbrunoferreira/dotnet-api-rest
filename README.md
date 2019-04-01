@@ -17,7 +17,7 @@ This is a example, to implements a web api in layers with C# (dotnet) and Postgr
 
 
 ### Run
-After preparing your environment and your virtualenv, follow the steps:
+After preparing your database and your connection string ( BookStore.DAL/DataBaseContext.cs ), follow the steps:
 
 * `dotnet restore`
 * `cd BookStore.API`
